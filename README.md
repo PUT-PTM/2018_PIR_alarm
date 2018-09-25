@@ -58,8 +58,8 @@ Middle - V0 LCD
 Right - GND
 
 Buzzer:
-+ -PB14
-- - GND
+'+' -PB14
+'-' - GND
 
 # How to compile 
 Just copy Project and compile. 
