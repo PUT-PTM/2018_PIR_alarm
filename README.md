@@ -19,47 +19,47 @@ potentiometer
 # How to run 
 Fetch our project, and run it using System Workbench for STM32. Upload program to STM32F4 Discovery and connect all needed pins. Then follow the steps listed on the display.
 
-+PinPad
-- Pin 1 = column 2 = PE12
-- Pin 2 = row 1 = PE7
-- Pin 3 = column 1 = PE11
-- Pin 4 = row 4 = PE10 - fioletowy
-- Pin 5 = column 3 = PE13
-- Pin 6 = row 3 = PE9
-- Pin 7 = row 2 = PE8
++ PinPad
+  - Pin 1 = column 2 = PE12
+  - Pin 2 = row 1 = PE7
+  - Pin 3 = column 1 = PE11
+  - Pin 4 = row 4 = PE10 - fioletowy
+  - Pin 5 = column 3 = PE13
+  - Pin 6 = row 3 = PE9
+  - Pin 7 = row 2 = PE8
 
 + LCD:
-- 1 - GND - GND
-- 2 - VCC - +5V
-- 3 - V0 - potentiometer
-- 4 - RS -PB2
-- 5 - RW - GND
-- 6 - E - PB7
-- 7 - D0 - unused
-- 8 - D1 - unused
-- 9 - D2 - unused
-- 10 - D3 - unused
-- 11 - D4 - PC12
-- 12 - DP - PC13
-- 13 - D6 - PB12
-- 14 - D7 - PB13
-- 15 - A - +3V
-- 16 - K - GND
+  - 1 - GND - GND
+  - 2 - VCC - +5V
+  - 3 - V0 - potentiometer
+  - 4 - RS -PB2
+  - 5 - RW - GND
+  - 6 - E - PB7
+  - 7 - D0 - unused
+  - 8 - D1 - unused
+  - 9 - D2 - unused
+  - 10 - D3 - unused
+  - 11 - D4 - PC12
+  - 12 - DP - PC13
+  - 13 - D6 - PB12
+  - 14 - D7 - PB13
+  - 15 - A - +3V
+  - 16 - K - GND
 
 + RGB Diode:
-- R: PC6
-- G: PC8
-- B: PC9
-- GND: GND
+  - R: PC6
+  - G: PC8
+  - B: PC9
+  - GND: GND
 
 + Potentiometer:
-- Left - 3.3V 
-- Middle - V0 LCD
-- Right - GND
+  - Left - 3.3V 
+  - Middle - V0 LCD
+  - Right - GND
 
 + Buzzer:
-- "+" -PB14
-- "-" - GND
+  - "+" -PB14
+  - "-" - GND
 
 # How to compile 
 Just copy Project and compile. 
