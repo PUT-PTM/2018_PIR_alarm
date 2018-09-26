@@ -325,63 +325,7 @@ int zmianaPinu()
 
 }
 
-void testPrzerwyTimer2()
-{
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_15);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_15);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_15);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_15);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
-	for (int i = 0; i < 1000000; i++);
-	GPIO_ToggleBits(GPIOD, GPIO_Pin_13);
 
-	GPIO_ResetBits(GPIOD, GPIO_Pin_13);
-
-	TIM2_init();
-	TIM2_NVIC_Config();
-	TIM2_IRQHandler();
-}
 
 void TIM2_init(){
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
@@ -462,18 +406,18 @@ void TIM3_NVIC_Config()
 	NVIC_InitTypeDef NVIC_InitStructure;
 	// numer przerwania
 	NVIC_InitStructure.NVIC_IRQChannel = TIM4_IRQn;
-	// priorytet g³ówny
+	// priorytet gÂ³Ã³wny
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0x00;
 	// subpriorytet
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0x00;
-	// uruchom dany kana³
+	// uruchom dany kanaÂ³
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-	// zapisz wype³nion¹ strukturê do rejestrów
+	// zapisz wypeÂ³nionÂ¹ strukturÃª do rejestrÃ³w
 	NVIC_Init(&NVIC_InitStructure);
 
-	// wyczyszczenie przerwania od timera 3 (wyst¹pi³o przy konfiguracji 	timera)
+	// wyczyszczenie przerwania od timera 3 (wystÂ¹piÂ³o przy konfiguracji 	timera)
 	TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
-	// zezwolenie na przerwania od przepe³nienia dla timera 3
+	// zezwolenie na przerwania od przepeÂ³nienia dla timera 3
 	TIM_ITConfig(TIM3, TIM_IT_Update, ENABLE);
 
 }
@@ -535,7 +479,9 @@ void setRGBColours(int valueOfRed, int valueOfGreen, int valueOfBlue) //nowa fun
 int main()
 {
 	SystemInit();
-
+	TIM2_init();
+	TIM2_NVIC_Config();
+	
     TM_HD44780_Init(16, 2);
 
 	int z=0;
